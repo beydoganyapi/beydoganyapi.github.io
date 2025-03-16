@@ -372,25 +372,16 @@ section {
 
 .home {
   padding: 0;
-  position: relative; /* Ekledim: İçeriğin konumunu belirlemek için */
-  height: 100vh; /* Ekledim: Ekran yüksekliğinin tamamını kaplaması için */
-  display: flex; /* Ekledim: İçeriği ortalamak için */
-  align-items: center; /* Ekledim: Dikeyde ortalamak için */
-  justify-content: center; /* Ekledim: Yatayda ortalamak için */
-}
-
-.home .swiper {
-  width: 100%;
-  height: 100%;
-  position: absolute; /* Ekledim: Slider'ı konumlandırmak için */
-  top: 0;
-  left: 0;
 }
 
 .home .slide {
   min-height: 60rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   position: relative;
   background-size: cover !important;
   background-position: center !important;
@@ -403,18 +394,19 @@ section {
   left: 0;
   height: 100%;
   width: 100%;
+  background: -webkit-gradient(linear, left top, right top, from(var(--white)), to(transparent));
   background: linear-gradient(90deg, var(--white), transparent);
 }
 
 .home .slide .content {
   width: 50rem;
   position: relative;
-  text-align: center; /* Ekledim: İçeriği ortalamak için */
 }
 
 .home .slide .content h3 {
   font-size: 6rem;
   color: var(--black);
+  text-transform: capitalize;
   text-transform: uppercase;
 }
 
@@ -435,7 +427,6 @@ section {
   width: 7rem;
   line-height: 7rem;
   background: var(--white);
-  z-index: 10; /* Ekledim: Butonların resmin önünde olması için */
 }
 
 .home .swiper-button-next:hover,
@@ -452,6 +443,7 @@ section {
 .home .swiper-button-prev {
   right: 7rem;
 }
+
 .about .row {
   display: -webkit-box;
   display: -ms-flexbox;
