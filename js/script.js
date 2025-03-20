@@ -98,3 +98,26 @@ var swiper = new Swiper(".logo-slider", {
       },
    },
 });
+
+const images = [
+   "images/1 (1).jpg",
+   "images/1 (3).jpg",
+   "images/1 (5).jpg",
+   "images/1 (7).jpg",
+   "images/1 (9).jpg",
+   // İstediginiz diğer resimleri buraya ekleyin
+];
+
+let currentImageIndex = 0;
+const autoImage = document.getElementById('auto-image');
+
+function changeImage() {
+   autoImage.src = images[currentImageIndex];
+   currentImageIndex = (currentImageIndex + 1) % images.length; // Dizinin sonuna gelince başa dön
+}
+
+// İlk resmi yükle
+changeImage();
+
+// Her 3 saniyede bir resmi değiştir (3000 milisaniye)
+setInterval(changeImage, 3000);
