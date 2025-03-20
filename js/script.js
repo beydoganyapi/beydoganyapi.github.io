@@ -99,25 +99,22 @@ var swiper = new Swiper(".logo-slider", {
    },
 });
 
-const images = [
-   "images/1 (1).jpg",
-   "images/1 (3).jpg",
-   "images/1 (5).jpg",
-   "images/1 (7).jpg",
-   "images/1 (9).jpg",
-   // İstediginiz diğer resimleri buraya ekleyin
-];
+document.addEventListener('DOMContentLoaded', function() {
+   const slider = document.querySelector('.slider');
+   const slides = document.querySelectorAll('.box');
+   let currentIndex = 0;
+   const slideCount = slides.length;
+   const slideInterval = 3000; // 3 saniye
 
-let currentImageIndex = 0;
-const autoImage = document.getElementById('auto-image');
+   function nextSlide() {
+       currentIndex = (currentIndex + 1) % slideCount;
+       updateSlider();
+   }
 
-function changeImage() {
-   autoImage.src = images[currentImageIndex];
-   currentImageIndex = (currentImageIndex + 1) % images.length; // Dizinin sonuna gelince başa dön
-}
+   function updateSlider() {
+       const translateX = -currentIndex * 100; // % cinsinden kaydırma
+       slider.style.transform = `translateX(${translateX}%)`;
+   }
 
-// İlk resmi yükle
-changeImage();
-
-// Her 3 saniyede bir resmi değiştir (3000 milisaniye)
-setInterval(changeImage, 3000);
+   setInterval(nextSlide, slideInterval);
+});

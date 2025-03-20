@@ -1050,3 +1050,28 @@ section {
   }
 }
 /*# sourceMappingURL=style.css.map */
+
+.slider-container {
+  width: 100%;
+  overflow: hidden; /* Taşmayı engelle */
+}
+
+.slider {
+  display: flex; /* Yatay sıralama için */
+  transition: transform 0.5s ease-in-out; /* Animasyon geçişi */
+}
+
+.box {
+  flex: 0 0 100%; /* Her bir resmin genişliği (tam ekran) */
+  /* Diğer stil tanımlarınız buraya (image, content, info, vb.) */
+  box-sizing: border-box; /* padding ve border'ın genişliğe dahil olmasını sağlar */
+  padding: 20px;
+}
+
+.image img {
+  width: 100%; /* Resmin konteyner genişliğine sığmasını sağlar */
+  height: auto;
+  display: block; /* Resmin altındaki boşluğu kaldırır */
+}
+
+/* İsteğe bağlı diğer stil tanımları */
